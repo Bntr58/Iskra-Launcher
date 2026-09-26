@@ -54,4 +54,4 @@ Uninstalling removes only the program's own files; your `config.json`, `images/`
 
 ## License
 
-[MIT](LICENSE) © 2026 BnTr58
+[MIT](LICENSE) © 2026 BnTr58!
