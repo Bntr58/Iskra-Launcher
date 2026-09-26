@@ -1,0 +1,84 @@
+{
+  "common": {
+    "languageName": "Русский",
+    "close": "Закрыть",
+    "notSelected": "не выбрано",
+    "untitled": "Без названия",
+    "name": "Название"
+  },
+  "titlebar": {
+    "settings": "Настройки",
+    "minimize": "Свернуть",
+    "close": "Закрыть"
+  },
+  "play": "ИГРАТЬ",
+  "preview": {
+    "empty": "Нет выбранной игры",
+    "noGames": "Нет игр — добавьте в настройках",
+    "selectGame": "Выберите игру слева",
+    "noImage": "У выбранной игры нет картинки"
+  },
+  "sidebar": {
+    "empty": "Список пуст. Откройте настройки, чтобы добавить игру."
+  },
+  "settings": {
+    "title": "Настройки",
+    "colors": {
+      "heading": "Цвета",
+      "titleColor": "Название выбранной игры",
+      "playColor": "Кнопка «Играть»"
+    },
+    "language": {
+      "heading": "Язык"
+    },
+    "folders": {
+      "heading": "Папки",
+      "launcherDir": "Папка лаунчера",
+      "imagesDir": "Папка картинок"
+    },
+    "list": {
+      "heading": "Список",
+      "empty": "Список пуст.",
+      "dragHandle": "Перетащите, чтобы изменить порядок",
+      "sepNamePlaceholder": "РАЗДЕЛИТЕЛЬ",
+      "image": "Картинка",
+      "delete": "Удалить"
+    },
+    "addGame": {
+      "heading": "Добавить игру",
+      "name": "Название",
+      "url": "Ссылка ярлыка",
+      "image": "Картинка",
+      "pickFile": "Выбрать файл…",
+      "add": "Добавить игру"
+    },
+    "addSeparator": {
+      "heading": "Добавить разделитель",
+      "name": "Название",
+      "namePlaceholder": "ЛЮБИМЫЕ",
+      "color": "Цвет",
+      "add": "Добавить"
+    },
+    "done": "Готово"
+  },
+  "notice": {
+    "cancel": "Отмена",
+    "ok": "ОК"
+  },
+  "messages": {
+    "noUrlSet": "У этой игры не указана ссылка ярлыка. Задайте её в настройках.",
+    "launchFailed": "Не удалось запустить игру.\n{error}",
+    "enterGameName": "Введите название игры.",
+    "enterSeparatorName": "Введите название разделителя.",
+    "deleteSeparatorConfirm": "Удалить разделитель «{name}» из списка?",
+    "deleteGameConfirm": "Удалить «{name}» из списка?",
+    "untitledGame": "игра"
+  },
+  "dialogs": {
+    "pickImageTitle": "Выберите картинку игры",
+    "imagesFilterName": "Изображения"
+  },
+  "backend": {
+    "urlMissing": "Ссылка не указана"
+  }
+}

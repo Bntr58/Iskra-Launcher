@@ -1,0 +1,84 @@
+{
+  "common": {
+    "languageName": "English",
+    "close": "Close",
+    "notSelected": "not selected",
+    "untitled": "Untitled",
+    "name": "Name"
+  },
+  "titlebar": {
+    "settings": "Settings",
+    "minimize": "Minimize",
+    "close": "Close"
+  },
+  "play": "PLAY",
+  "preview": {
+    "empty": "No game selected",
+    "noGames": "No games — add them in settings",
+    "selectGame": "Select a game on the left",
+    "noImage": "Selected game has no image"
+  },
+  "sidebar": {
+    "empty": "The list is empty. Open settings to add a game."
+  },
+  "settings": {
+    "title": "Settings",
+    "colors": {
+      "heading": "Colors",
+      "titleColor": "Selected game title",
+      "playColor": "\"Play\" button"
+    },
+    "language": {
+      "heading": "Language"
+    },
+    "folders": {
+      "heading": "Folders",
+      "launcherDir": "Launcher directory",
+      "imagesDir": "Images directory"
+    },
+    "list": {
+      "heading": "List",
+      "empty": "The list is empty.",
+      "dragHandle": "Drag to reorder",
+      "sepNamePlaceholder": "SEPARATOR",
+      "image": "Image",
+      "delete": "Delete"
+    },
+    "addGame": {
+      "heading": "Add game",
+      "name": "Name",
+      "url": "Shortcut URL",
+      "image": "Image",
+      "pickFile": "Choose file...",
+      "add": "Add game"
+    },
+    "addSeparator": {
+      "heading": "Add separator",
+      "name": "Name",
+      "namePlaceholder": "FAVORITES",
+      "color": "Color",
+      "add": "Add"
+    },
+    "done": "Done"
+  },
+  "notice": {
+    "cancel": "Cancel",
+    "ok": "OK"
+  },
+  "messages": {
+    "noUrlSet": "This game has no shortcut URL specified. Set it in settings.",
+    "launchFailed": "Failed to launch the game.\n{error}",
+    "enterGameName": "Enter the game name.",
+    "enterSeparatorName": "Enter the separator name.",
+    "deleteSeparatorConfirm": "Delete separator \"{name}\" from the list?",
+    "deleteGameConfirm": "Delete \"{name}\" from the list?",
+    "untitledGame": "game"
+  },
+  "dialogs": {
+    "pickImageTitle": "Select game image",
+    "imagesFilterName": "Images"
+  },
+  "backend": {
+    "urlMissing": "URL not specified"
+  }
+}
