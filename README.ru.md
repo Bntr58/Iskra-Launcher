@@ -1,5 +1,7 @@
 # IskraLauncher
 
+![Preview](https://i.ibb.co/r23m0gQb/Untitled-3.png)
+
 [English](README.md) · **Русский**
 
 IskraLauncher — компактный портативный лаунчер игр для Windows. Список игр слева, крупный превью-постер справа и одна большая кнопка **PLAY** — вот и вся идея. Игры запускаются через shortcut-ссылки (`steam://rungameid/...`, `roblox://placeID=.../`, `com.epicgames.launcher://...`) или обычные командные строки, скопированные из поля *«Объект»* ярлыка.

@@ -1,5 +1,7 @@
 # IskraLauncher
 
+![Preview](https://i.ibb.co/r23m0gQb/Untitled-3.png)
+
 **English** · [Русский](README.ru.md)
 
 IskraLauncher is a small, portable game launcher for Windows. A game list on the left, a large preview on the right, and one big **PLAY** button — that's the whole idea. Games launch through shortcut URLs (`steam://rungameid/...`, `roblox://placeID=.../`, `com.epicgames.launcher://...`) or through plain command lines copied straight from a shortcut's *Target* field.
