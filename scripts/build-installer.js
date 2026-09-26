@@ -40,5 +40,12 @@ if (!makensis) {
   process.exit(1);
 }
 
-const res = spawnSync(makensis, [`/DPROJECT_ROOT=${root}`, nsiFile], { stdio: 'inherit', cwd: root });
+const { version } = JSON.parse(fs.readFileSync(path.join(root, 'version.json'), 'utf-8'));
+console.log(`Building IskraLauncherSetup_${version}.exe`);
+
+const res = spawnSync(
+  makensis,
+  [`/DPROJECT_ROOT=${root}`, `/DAPP_VERSION=${version}`, nsiFile],
+  { stdio: 'inherit', cwd: root }
+);
 process.exit(res.status ?? 1);
