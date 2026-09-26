@@ -27,7 +27,11 @@ Unicode true
 !define SRC_DIR  "${PROJECT_ROOT}\dist\IskraLauncher-win32-x64"
 
 Name "${APP_NAME}"
-OutFile "${PROJECT_ROOT}\dist\IskraLauncherSetup.exe"
+; APP_VERSION (YY.MM.DD.NN) is passed in by scripts/build-installer.js from version.json
+!ifndef APP_VERSION
+  !define APP_VERSION "dev"
+!endif
+OutFile "${PROJECT_ROOT}\dist\IskraLauncherSetup_${APP_VERSION}.exe"
 InstallDir "$LOCALAPPDATA\Programs\${APP_NAME}"
 RequestExecutionLevel user
 ShowInstDetails show
@@ -49,14 +53,14 @@ Page custom PickFolderPageCreate PickFolderPageLeave
 !insertmacro MUI_PAGE_INSTFILES
 
 !define MUI_FINISHPAGE_RUN "$INSTDIR\${APP_EXE}"
-!define MUI_FINISHPAGE_RUN_TEXT "Запустить IskraLauncher"
+!define MUI_FINISHPAGE_RUN_TEXT "Launch IskraLauncher"
 !insertmacro MUI_PAGE_FINISH
 
 ; ---------- uninstaller pages ----------
 !insertmacro MUI_UNPAGE_CONFIRM
 !insertmacro MUI_UNPAGE_INSTFILES
 
-!insertmacro MUI_LANGUAGE "Russian"
+!insertmacro MUI_LANGUAGE "English"
 
 ; ---------- pick a base folder; the "IskraLauncher" subfolder is automatic ----------
 
@@ -68,18 +72,18 @@ Function .onInit
 FunctionEnd
 
 Function PickFolderPageCreate
-  !insertmacro MUI_HEADER_TEXT "Папка установки" "Выберите папку, внутри которой будет создана папка «${APP_NAME}»"
+  !insertmacro MUI_HEADER_TEXT "Install location" "Choose a folder; an '${APP_NAME}' folder will be created inside it"
 
   nsDialogs::Create 1018
   Pop $0
 
-  ${NSD_CreateLabel} 0 0 100% 32u "Все файлы лаунчера будут скопированы в подпапку «${APP_NAME}» внутри выбранной ниже папки."
+  ${NSD_CreateLabel} 0 0 100% 32u "All launcher files will be copied into an '${APP_NAME}' subfolder inside the folder chosen below."
   Pop $0
 
   ${NSD_CreateText} 0 38u 74% 13u "$INSTDIR"
   Pop $DirText
 
-  ${NSD_CreateButton} 76% 37u 24% 15u "Обзор..."
+  ${NSD_CreateButton} 76% 37u 24% 15u "Browse..."
   Pop $0
   ${NSD_OnClick} $0 OnBrowseClick
 
@@ -87,7 +91,7 @@ Function PickFolderPageCreate
 FunctionEnd
 
 Function OnBrowseClick
-  nsDialogs::SelectFolderDialog "Выберите папку для установки" "$BaseDir"
+  nsDialogs::SelectFolderDialog "Select the install folder" "$BaseDir"
   Pop $0
   ${If} $0 != error
     StrCpy $BaseDir "$0"
@@ -99,7 +103,7 @@ FunctionEnd
 Function PickFolderPageLeave
   ${NSD_GetText} $DirText $INSTDIR
   ${If} $INSTDIR == ""
-    MessageBox MB_ICONEXCLAMATION "Укажите папку установки."
+    MessageBox MB_ICONEXCLAMATION "Please specify an install folder."
     Abort
   ${EndIf}
 FunctionEnd
@@ -120,6 +124,7 @@ Section "Install"
   WriteUninstaller "$INSTDIR\Uninstall.exe"
 
   WriteRegStr HKCU "Software\Microsoft\Windows\CurrentVersion\Uninstall\${APP_NAME}" "DisplayName" "${APP_NAME}"
+  WriteRegStr HKCU "Software\Microsoft\Windows\CurrentVersion\Uninstall\${APP_NAME}" "DisplayVersion" "${APP_VERSION}"
   WriteRegStr HKCU "Software\Microsoft\Windows\CurrentVersion\Uninstall\${APP_NAME}" "UninstallString" "$INSTDIR\Uninstall.exe"
   WriteRegStr HKCU "Software\Microsoft\Windows\CurrentVersion\Uninstall\${APP_NAME}" "InstallLocation" "$INSTDIR"
   WriteRegStr HKCU "Software\Microsoft\Windows\CurrentVersion\Uninstall\${APP_NAME}" "DisplayIcon" "$INSTDIR\${APP_EXE}"
@@ -162,9 +167,9 @@ Section "Uninstall"
 
   RMDir "$INSTDIR" ; only actually removes it if nothing user-owned is left
   IfFileExists "$INSTDIR" 0 uninstDone
-    MessageBox MB_ICONINFORMATION|MB_OK "Ваши игры, картинки и настройки языка сохранены здесь:$\n$INSTDIR$\n$\nУдалите эту папку вручную, если она больше не нужна." /SD IDOK
+    MessageBox MB_ICONINFORMATION|MB_OK "Your games, images and language files were kept here:$\n$INSTDIR$\n$\nDelete this folder manually if you no longer need it." /SD IDOK
     Goto uninstEnd
   uninstDone:
-    MessageBox MB_ICONINFORMATION|MB_OK "IskraLauncher удалён." /SD IDOK
+    MessageBox MB_ICONINFORMATION|MB_OK "IskraLauncher has been removed." /SD IDOK
   uninstEnd:
 SectionEnd
