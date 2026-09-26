@@ -1,0 +1,39 @@
+# IskraLauncher — language registry
+#
+# Format: <code> = <display name>
+#   - <code> is the file name (without .json) that the Settings language
+#     dropdown will offer, e.g. "rus" -> localization/rus.json
+#   - the dropdown only lists codes that actually have a matching .json
+#     file in this folder
+#   - the display name shown in the dropdown comes from that file's own
+#     "common.languageName" key if present; this list is only a fallback
+#     for files that don't set one (and then falls back further to the
+#     raw code if it isn't listed here either)
+#
+# To add a language:
+#   1. copy rus.json to localization/<code>.json and translate the values
+#      (keep the same keys; set "common.languageName" to how the language
+#      names itself, e.g. "Українська")
+#   2. optionally add "<code> = <Name>" below too, as a fallback
+#   3. restart the launcher — it appears automatically
+#
+# This folder lives next to IskraLauncher.exe in a packaged build (like
+# images/ and config.json) — edit it in place, no rebuild needed.
+#
+# Codes below follow ISO 639-2/B (three-letter). Any code works, though —
+# pick your own if none of these fit.
+
+eng = English
+rus = Русский
+ukr = Українська
+bel = Беларуская
+bul = Български
+deu = Deutsch
+fra = Français
+spa = Español
+ita = Italiano
+pol = Polski
+tur = Türkçe
+chi = 中文
+jpn = 日本語
+kor = 한국어
